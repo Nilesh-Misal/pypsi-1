@@ -1,0 +1,56 @@
+{
+    "h1": {
+        "text-size": "range",
+        "color": "color",
+        "font-family": "select",
+        "edittext":"text",
+        "background-color":"color"
+    },
+    "h2": {
+        "text-size": "range",
+        "color": "color",
+        "font-family": "select",
+        "edittext":"text",
+        "background-color":"color"
+    },
+    "h3": {
+        "text-size": "range",
+        "color": "color",
+        "font-family": "select",
+        "edittext":"text",
+        "background-color":"color"
+    },
+    "h4": {
+        "text-size": "range",
+        "color": "color",
+        "font-family": "select",
+        "edittext":"text",
+        "background-color":"color"
+    },
+    "h5": {
+        "text-size": "range",
+        "color": "color",
+        "font-family": "select",
+        "edittext":"text",
+        "background-color":"color"
+    },
+    "h5": {
+        "text-size": "range",
+        "color": "color",
+        "font-family": "select",
+        "edittext":"text",
+        "background-color":"color"
+    },
+    "h6": {
+        "text-size": "range",
+        "color": "color",
+        "font-family": "select",
+        "edittext":"text",
+        "background-color":"color"
+    },
+    "p": {
+        "text-size": "range",
+        "color": "color",
+        "font-family": "select"
+    }
+}

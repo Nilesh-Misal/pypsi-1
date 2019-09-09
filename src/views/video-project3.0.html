@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Publication Project</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/tab-design.css">
+    <script src="../assets/js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/custom-font.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/video-editor.css">
+    <script type="text/javascript" src="../assets/js/include-html.js"></script>
+    <link rel="stylesheet" href="../assets/css/jquery-ui.css">
+    <script src="../assets/js/jquery-ui.js"></script>
+    <script>
+        //analytics tag
+
+
+        
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-941940-28']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+          
+        </script>
+    <style type="text/css">
+    .dropdown-submenu {
+        position: relative;
+    }
+
+    .dropdown-submenu .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: -1px;
+    }
+    .modal-dialog {
+  height: 100vh !important;
+  display: flex;
+}
+
+.modal-content {
+  margin: auto !important;
+  height: fit-content !important;
+}
+	/* The Modal (background) */
+    .modal {
+		  display: none; /* Hidden by default */
+		  position: fixed; /* Stay in place */
+		  z-index: 1; /* Sit on top */
+		  padding-top: 100px; /* Location of the box */
+		  left: 0;
+		  top: 0;
+		  width: 100%; /* Full width */
+		  height: 100%; /* Full height */
+		  overflow: auto; /* Enable scroll if needed */
+		  background-color: rgb(0,0,0); /* Fallback color */
+		  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		}
+
+		/* Modal Content */
+		.modal-content {
+		  background-color:white;
+		  margin: auto;
+		  padding: 20px;
+		  border: 1px solid #888;
+		  width: 40%;
+		}
+
+		/* The Close Button */
+		.close {
+		  color: #aaaaaa;
+		  float: right;
+		  font-size: 28px;
+		  font-weight: bold;
+		}
+
+		.close:hover,
+		.close:focus {
+		  color:white;
+		  text-decoration: none;
+		  cursor: pointer;
+		}
+    #more {
+        display: none;
+    }
+
+    .w3-main,
+    #main {
+        transition: margin-left .4s, margin-right .4s;
+    }
+
+    #image_selected_list li:hover{
+        background: gray;
+        color:white
+    }
+    .fa-edit:hover{
+font-size: 20px;
+    }
+    </style>
+</head>
+
+<body>
+
+  
+      
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li class="dropdown _child">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">File</a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">New <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">New File<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">HTML File</a></li>
+                                        <li><a href="#">CSS File</a></li>
+                                        <li><a href="#">JS File</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">New Project<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li class="dropdown-submenu">
+                                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">HTML Based<span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">New </a></li>
+                                                <li><a href="#" id="open-files-in-project">Open</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown-submenu">
+                                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Latex Based<span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">New</a></li>
+                                                <li><a href="#">Open</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown-submenu">
+                                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Video Presentation<span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">New</a></li>
+                                                <li><a href="#">Open</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown-submenu">
+                                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">E-mail Design<span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="javascript:void(0)" action-field="menuBtn-start-new">New</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown-submenu">
+                                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Social Based<span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">New</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown-submenu">
+                                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Publication Design<span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">New</a></li>
+                                                <li><a href="#">Open</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a tabindex="-1" href="#">Open</a></li>
+                        <li><a tabindex="-1" href="#">Save</a></li>
+                        <li><a tabindex="-1" href="#">Save As</a></li>
+                        <li><a tabindex="-1" href="#">Close Project</a></li>
+                        <li><a tabindex="-1" href="#">Exit</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown _child">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Navigate</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Send <span style="float: right;">Ctrl+Alt+Enter</span></a></li>
+                        <li><a href="#">Reset <span style="float: right;">Ctrl+Alt+Esc</span></a></li>
+                        <li><a href="#">Delete <span style="float: right;">Ctrl+Delete</span></a></li>
+                    </ul>
+                </li>
+                <li class="dropdown _child">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Attach</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Image</a></li>
+                        <li><a href="#">Document</a></li>
+                        <li><a href="#">Audio</a></li>
+                    </ul>
+                </li>
+                <li class="_child"><a href="#">Settings</a></li>
+                <li class="_child"><a href="#">Help</a></li>
+                <li class="_child"><a href="#">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="work-pan">
+                <div class="w3-sidebar w3-bar-block w3-card w3-animate-left tool-tab-pan" id="leftMenu" style="width: 20%;">
+                    <span class="close-btn"><button id="leftMenu-btn" class="w3-bar-item w3-button w3-medium icn"><i class="fa fa-times" aria-hidden="true"></i></button></span>
+                    <ul class="nav nav-tabs tool-tab">
+                        <li class="active"><a data-toggle="tab" href="#tb0"><i class="fa fa-file-text" aria-hidden="true"></i></a></li>
+                        <li><a data-toggle="tab" href="#tb1"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
+                        <li><a data-toggle="tab" href="#tb01"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></li>
+                        <li><a data-toggle="tab" href="#tb11"><i class="fa fa-music" aria-hidden="true"></i></a></li>
+                        <li><a data-toggle="tab" href="#tb2"><i class="fa fa-video-camera" aria-hidden="true"></i></a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="tb0" class="tab-pane fade in active">
+                            <div class="tab-head">
+                                <p>Text</p>
+                            </div>
+                            <div class="tab-menu">
+                                <ul>
+                                    <li><a class="active" href="#"><i class="fa fa-th-large" data-toggle="tooltip" data-placement="top" title="Grid View!" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-th-list" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="List View!"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-file-o" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="File!"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="tab-tool-item">
+                                <ul class="nav nav-tabs tool-tab">
+                                    <li id="fbutton"><img src="../assets/images/tools/add-new.jpg"><br>
+                                        <p>Add new files</p>
+                                    </li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="tb1" class="tab-pane fade">
+                            <div class="tab-head">
+                                <p>Images</p>
+                            </div>
+                            <div class="tab-menu">
+                                <ul>
+                                    <li><a class="active" href="#"><i class="fa fa-th-large" data-toggle="tooltip" data-placement="top" title="Grid View!" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-th-list" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="List View!"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-file-o" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="File!"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="tab-tool-item">
+                                <ul class="nav nav-tabs tool-tab">
+                                    <li><img src="../assets/images/tools/dummy-img.jpg"><br>
+                                        <p>Add Image</p>
+                                    </li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="tb01" class="tab-pane fade">
+                            <div class="tab-head">
+                                <p>PDF</p>
+                            </div>
+                            <div class="tab-menu">
+                                <ul>
+                                    <li><a class="active" href="#"><i class="fa fa-th-large" data-toggle="tooltip" data-placement="top" title="Grid View!" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-th-list" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="List View!"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-file-o" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="File!"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="tab-tool-item">
+                                <ul class="nav nav-tabs tool-tab">
+                                    <li><img src="../assets/images/tools/add-new.jpg" id="choose_folder"><br>
+                                        <input id="choose_folder_button" type="file" style="visibility: hidden;" />
+                                        <p>Add new files</p>
+                                    </li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="tb11" class="tab-pane fade">
+                            <div class="tab-head">
+                                <p>Music</p>
+                            </div>
+                            <div class="tab-menu">
+                                <ul>
+                                    <li><a class="active" href="#"><i class="fa fa-th-large" data-toggle="tooltip" data-placement="top" title="Grid View!" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-th-list" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="List View!"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-file-o" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="File!"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="tab-tool-item">
+                                <ul class="nav nav-tabs tool-tab">
+                                    <li><img src="../assets/images/tools/add-music.jpg"><br>
+                                        <p>Select Music</p>
+                                    </li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="tb2" class="tab-pane fade">
+                            <div class="tab-head">
+                                <p>Videos</p>
+                            </div>
+                            <div class="tab-menu">
+                                <ul>
+                                    <li><a class="active" href="#"><i class="fa fa-th-large" data-toggle="tooltip" data-placement="top" title="Grid View!" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-th-list" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="List View!"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-file-o" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="File!"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="tab-tool-item">
+                                <ul class="nav nav-tabs tool-tab">
+                                    <li><img src="../assets/images/tools/add-video.jpg"><br>
+                                        <p>Add new files</p>
+                                    </li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <span id="status" style="color:green"></span>
+                    <div id="drag">
+                       
+                        <div id="small" class="row">
+                            <div class="col-sm-6"><label> Width:</label></div><div class="col-sm-6"><input id="width" type="number" step="1" value="500"></div>
+                            <div class="col-sm-6"><label>Height:</label></div><div class="col-sm-6"><input id="height" type="number" step="1" value="300"></div>
+                            <div class="col-sm-6"><label>Video Frame Rate:</label></div><div class="col-sm-6"><input id="framerate" type="number" step="1" value="15"></div>
+                        </div>
+                       
+                    </div>
+                    <br>
+                    <ul id="image_selected_list"  style="list-style-type:none;">
+                           
+                        </ul>
+                    <input type="file" id="filesinput" style="visibility: hidden" multiple>
+            
+                    <br>
+                    <video id="awesome" style="visibility: hidden" ontrols autoplay loop></video>
+                    <br>
+                   
+                   
+            
+                    <canvas id="canvas" style="display:none"></canvas>
+                   <div>
+                       <h5 id="startcut"></h5>
+                       <h5 id="endcut"></h5>
+                   </div>
+            
+                </div>
+                <div id="open1" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                      <span class="close">&times;</span>
+                      <p class="form-label">Enter file name</p><br/>
+                      <input type="file" id="fetchfiles"  class="form-control" name="files[]" directory /><br/>
+                      <button id="openbtn" type="submit" class="btn btn-primary btn-sm" >OPEN</button>
+                    </div>
+                  
+                  </div>
+                
+<div id="edit_image_description" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p class="form-label">Write image Description</p><br/>
+             
+              <textarea rows="4" cols="50" class="form-control" id="write_image_description"></textarea>
+          <button  id="Done" class="btn btn-primary btn-sm" >Done</button>
+        </div>
+      
+      </div>
+     
+                <div class="w3-sidebar w3-bar-block w3-card w3-animate-right tool-tab-pan" style="right:0;" id="rightMenu">
+                    <span class="close-btn"><button id="rightMenu-btn" class="w3-bar-item w3-button w3-medium icn"><i class="fa fa-times" aria-hidden="true"></i></button></span>
+                    <ul class="nav nav-tabs tool-tab">
+                        <li class="active"><a data-toggle="tab" href="#ntab0"><i class="fa fa-sticky-note" aria-hidden="true"></i></a></li>
+                        <li><a data-toggle="tab" href="#ntab1"><i class="fa fa-volume-up" aria-hidden="true"></i></a></li>
+                        <li><a data-toggle="tab" href="#ntab2"><i class="fa fa-mouse-pointer" aria-hidden="true"></i></a></li>
+                    </ul>
+                    <div class="tab-content" style="height: 624px; overflow: auto;">
+                        <div id="ntab0" class="tab-pane fade in active">
+                            <div class="tab-head">
+                                <p>Transform</p>
+                            </div>
+                            <div class="tab-property">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td><i class="fa fa-chevron-right"></i></td>
+                                            <td>accept</td>
+                                            <td><input autocomplete="off" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fa fa-chevron-right"></i></td>
+                                            <td>alt</td>
+                                            <td><input autocomplete="off" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>max</td>
+                                            <td><input autocomplete="off" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>maxlength</td>
+                                            <td><input autocomplete="off" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fa fa-chevron-right"></i></td>
+                                            <td>min</td>
+                                            <td><input autocomplete="off" type="text"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-head">
+                                <p>compositing</p>
+                            </div>
+                            <div class="tab-property">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td><i class="fa fa-chevron-right"></i></td>
+                                            <td>accept</td>
+                                            <td><input autocomplete="off" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fa fa-chevron-right"></i></td>
+                                            <td>alt</td>
+                                            <td><input autocomplete="off" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fa fa-chevron-right"></i></td>
+                                            <td>autocomplete</td>
+                                            <td><input autocomplete="off" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fa fa-chevron-right"></i></td>
+                                            <td>autofocus</td>
+                                            <td><input autocomplete="off" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>max</td>
+                                            <td><input autocomplete="off" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>maxlength</td>
+                                            <td><input autocomplete="off" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fa fa-chevron-right"></i></td>
+                                            <td>min</td>
+                                            <td><input autocomplete="off" type="text"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-head">
+                                <p>Border</p>
+                            </div>
+                            <div class="tab-property">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td><i class="fa fa-chevron-right"></i></td>
+                                            <td>accept</td>
+                                            <td><input autocomplete="off" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fa fa-chevron-right"></i></td>
+                                            <td>alt</td>
+                                            <td><input autocomplete="off" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fa fa-chevron-right"></i></td>
+                                            <td>autocomplete</td>
+                                            <td><input autocomplete="off" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fa fa-chevron-right"></i></td>
+                                            <td>autofocus</td>
+                                            <td><input autocomplete="off" type="text"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-head">
+                                <p>speed</p>
+                            </div>
+                            <div class="tab-property">
+                                <table class="table">
+                                    <tbody>
+                                            <tr>
+                                                    <td><i class="fa fa-chevron-right active"></i></td>
+                                                    <td><span style="color: black">Video speed</span>  <input autocomplete="off" id="video-speed" style="border: 1px solid black" type="text"></td>
+                                                
+                                                </tr>
+                                        <tr>
+                                            <td><i class="fa fa-chevron-right"></i></td>
+                                            <td>accept</td>
+                                            <td><input autocomplete="off" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fa fa-chevron-right"></i></td>
+                                            <td>alt</td>
+                                            <td><input autocomplete="off" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fa fa-chevron-right"></i></td>
+                                            <td>autocomplete</td>
+                                            <td><input autocomplete="off" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fa fa-chevron-right"></i></td>
+                                            <td>autofocus</td>
+                                            <td><input autocomplete="off" type="text"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="ntab1" class="tab-pane fade">
+                            <h3>Ntab1</h3>
+                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                        <div id="ntab2" class="tab-pane fade">
+                            <h3>Ntab2</h3>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="main" style="margin-left: 20%; margin-right: 20%;">
+                    <div class="w3-teal" style="background: #f3f3f3 !important;">
+                        <button class="w3-button w3-teal w3-large w3-left" style="border-right: 1px solid #a9a9a9; display: none;">&#9776;</button>
+                        <button class="w3-button w3-teal w3-large w3-right" style="display: none;">&#9776;</button>
+                        <div class="w3-container" style="padding: 0; display: flow-root;">
+                            <div class="video-container">
+                               
+                                <video id="video1" width="900" style="margin: 30px;" >
+                                    <source src="C:/Users/admin/Documents/pypsi-stuff/python-ffmpeg/cannon.mp4" id="vid_src" type="video/mp4">
+                                    
+                                    Your browser does not support HTML5 video.
+                                  </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="bottom-tool-pain">
+                <div class="bottom-tool-menu">
+                    <ul>
+                            <li> <button id="final_render">Final render</button></li>
+                            <li> <button id="render_audio_video">Render</button></li>
+                            <li> <button id="split_video">split</button></li>
+                            <li> <button id="cut_clip">cut clip</button></li>
+                            <li> <button id="call_python">call python</button></li>
+                        <li> <button onclick="pdf_to_image()">pdf-images</button></li>
+                        <li> <button id="createvideo">Create Video</button></li>
+                        <li> <a style="display:none" id="download" download="video.mp4"><button>Save Video</button></a></li>
+                        <li><a href="#" data-toggle="tooltip" data-placement="top" title="Backward!"><i class="fa fa-step-backward" aria-hidden="true" id="backward_1"></i></a></li>
+                        <li><a href="#" data-toggle="tooltip" data-placement="top" title="Forward!"><i class="fa fa-step-forward" aria-hidden="true" id="forward_1"></i></a></li>
+                        <li><a href="javascript:void(0)"  data-toggle="tooltip" data-placement="top" title="Play!" id="play"><i class="fa fa-play"></i></a></li>
+                        <li><a href="javascript:void(0)"  data-toggle="tooltip" data-placement="top" title="Stop!"><i class="fa fa-stop" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-microphone" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Microphone!"></i></a></li>
+                        <li><a href="#"><i class="fa fa-volume-up" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Volume!"></i><i class="fa fa-volume-off hidden" aria-hidden="true"></i></a></li>
+                        <li><a href="#" style="border-right: 1px solid #a9a9a9;" data-toggle="tooltip" data-placement="top" title="Record!"><i class="fa fa-camera" aria-hidden="true"></i></a></li>
+                        <li style="min-width:80px; padding: 0 10px;"><span id="demo"></span></li>
+                        <li><span><input type="range" min="1" max="100" value="0" class="slider" id="myRange"></span></li>
+                        <li style="min-width:80px; padding: 0 10px;"><span id="demo2"> 00:00:00 </span></li>
+                        <li><a href="#" data-toggle="tooltip" data-placement="top" title="Full screen!"><i class="fa fa-arrows-alt" aria-hidden="true"></i></a></li>
+                        <li><a href="#" data-toggle="tooltip" data-placement="top" title="Fit to screen!"><strong>Fit</strong></a></li>
+                        <li><a href="#" data-toggle="tooltip" data-placement="top" title="Pointer!"><i class="fa fa-mouse-pointer" aria-hidden="true"></i></a></li>
+                        <li><a href="#" data-toggle="tooltip" data-placement="top" title="Crop!" style="border-right: 1px solid #a9a9a9;"><i class="fa fa-crop" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+                <div class="bottom-tool-sec">
+                    <ul>
+                        <li><a href="#" data-toggle="tooltip" data-placement="top" title="Backward!"><i class="fa fa-reply" aria-hidden="true"></i></a></li>
+                        <li><a href="#" data-toggle="tooltip" data-placement="top" title="Forward!"><i class="fa fa-share" aria-hidden="true"></i></a></li>
+                        <li><a href="#" data-toggle="tooltip" data-placement="top" title="Scissors!" id="cutpart"><i class="fa fa-scissors" aria-hidden="true"></i></a></li>
+                        <li><a href="#" data-toggle="tooltip" data-placement="top" title="Full screen!"><i class="fa fa-arrows-h" aria-hidden="true"></i></a></li>
+                        <li style="padding-right: 10px;"><a href="#"><i class="fa fa-minus" aria-hidden="true"></i></a></li>
+                        <li><span> <input type="range" min="1" max="100" value="50" class="slider-sec" id="myRange"> </span></li>
+                        <li style="padding-left: 10px;"><a href="#" style="border-left:0; border-right: 1px solid #a9a9a9;"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input type="file" id="choose_audio" accept="audio/mp3,audio/*;capture=microphone" style="visibility: hidden"  >
+  
+    <script src="../assets/js/video-project.js"></script>
+    
+<script src="../views/try/whammy.js"></script>
+<script>
+    const JsonFind = require('json-find');
+    var selected_image='';
+var localdata={ };
+var currentTime1=0;
+var name_of__fetched_files=[];
+            /* Drag'n drop stuff */
+            var drag = document.getElementById("drag");
+            var fbutton = document.getElementById("fbutton");
+            var createvideo = document.getElementById("createvideo");
+            var files = document.getElementById("filesinput");
+
+            var ctx = 0;
+
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext("2d");
+
+            //image to video via Whammy
+            var video = new Whammy.Video(15);
+             var vidduration=0;
+            var filesarr = [];
+            var audio_detail_array=[];
+            var file;
+
+
+            createvideo.addEventListener("click", function() {
+            //    generate_audio();
+            alert('inside1')
+                document.getElementById('status').innerHTML = "Working... Please Wait.";
+
+                document.getElementById('awesome').src = "";
+                ctx = 0;
+
+                canvas.width = document.getElementById("width").value;
+                canvas.height = document.getElementById("height").value;
+                video = new Whammy.Video(document.getElementById("framerate").value);
+
+                //if we have images loaded
+                if(filesarr.length>0){
+                    alert('inside1')
+                    //loop through them and process
+                    for(i=0; i<filesarr.length; i++) {
+                       file = filesarr[i];
+                      console.log(file+' this')
+                          if(file.type.match('image.*')){
+                              console.log(file)
+                            process(file);
+                        
+                          } else {
+                          document.getElementById('status').innerHTML = "This file does not seem to be a image.";
+                         }
+                    } 
+                } else {
+                    alert('Emplty filearray')
+                    document.getElementById('status').innerHTML = "";
+                }
+
+            }, false);
+
+
+
+
+            fbutton.addEventListener("click", function() {
+                document.getElementById('filesinput').click();
+            }, false);
+
+            drag.ondragover = function(e) {e.preventDefault()}
+            drag.ondrop = function(e) {
+                e.preventDefault();
+                filesarr = e.dataTransfer.items;
+
+
+
+                document.getElementById('status').innerHTML = "Please select options and click on Create Video.";
+            }
+
+            //process files VIA INPUT
+            files.addEventListener("change", function (e) {
+
+                filesarr = e.target.files;
+               // filesarr.push('C:/Users/rishi/OneDrive/Desktop/Wuntitled-1.png');
+                //filesarr.push('C:/Users/rishi/OneDrive/Desktop/Wuntitled-1.png');
+                //filesarr.push('C:/Users/rishi/OneDrive/Desktop/Wuntitled-1.png');
+                for(let i=0;i<filesarr.length;i++){
+                    name_of__fetched_files[i]=filesarr[i].name;
+                    audio_detail_array[filesarr[i].name]={"path":filesarr[i].path,"name":filesarr[i].name};
+console.log(filesarr[i])
+
+$('#image_selected_list').append(' <li style="padding:6px;" class="liclass"><img src="'+filesarr[i].path+'" height="60" width="100" />  <label style="overflow:hidden;">'+filesarr[i].name+'  <i class="fa fa-edit" id="'+filesarr[i].name+'"></i>         <i class="fa fa-file-audio-o"style="font-size:15px;" id="choose_this_audio" name="'+filesarr[i].name+'" aria-hidden="true"></i></label></li>');
+}
+mentain_audio()
+                console.log(filesarr)
+                document.getElementById('status').innerHTML = "Please select options and click on Create Video.";
+               if($('#status').text()=="Please select options and click on Create Video."){
+                // $('#createvideo').trigger('click')
+               }
+            }, false)
+
+           // mentain_audio();
+
+
+            function mentain_audio(){
+                //audio_detail_array
+
+for(let i=0;i< name_of__fetched_files.length;i++){
+    audio_detail_array[name_of__fetched_files[i]]['audio']="NA"
+    audio_detail_array[name_of__fetched_files[i]]['text']="NA"
+}
+
+
+console.log(audio_detail_array)
+            }
+
+
+            /* main process function */
+            function process(file) {
+
+                var reader = new FileReader();
+                reader.onload = function(event) {
+                    var dataUri = event.target.result;
+                    var img = new Image();
+                 
+                    //load image and drop into canvas
+                    img.onload = function() {
+
+                        //a custom fade in and out slideshow
+                        context.globalAlpha = 0.2;
+                        context.drawImage(img, 0, 0, canvas.width, canvas.height);
+                        video.add(context);
+                        context.clearRect(0,0,context.canvas.width,context.canvas.height);
+                        context.globalAlpha = 0.4;
+                        context.drawImage(img, 0, 0, canvas.width, canvas.height);
+                        video.add(context);
+                        context.clearRect(0,0,context.canvas.width,context.canvas.height);
+                        context.globalAlpha = 0.6;
+                        context.drawImage(img, 0, 0, canvas.width, canvas.height);
+                        video.add(context);
+                        context.clearRect(0,0,context.canvas.width,context.canvas.height);
+                        context.globalAlpha = 0.8;
+                        context.drawImage(img, 0, 0, canvas.width, canvas.height);
+                        video.add(context);                       
+                        context.clearRect(0,0,context.canvas.width,context.canvas.height);
+                        context.globalAlpha = 1;
+                        context.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+                        //this should be a loop based on some user input
+                        video.add(context);
+                        video.add(context);
+                        video.add(context);
+                        video.add(context);
+                        video.add(context);
+                        video.add(context);
+                        video.add(context);
+
+                        context.clearRect(0,0,context.canvas.width,context.canvas.height);
+                        context.globalAlpha = 0.8;
+                        context.drawImage(img, 0, 0, canvas.width, canvas.height);
+                        video.add(context);
+                        context.clearRect(0,0,context.canvas.width,context.canvas.height);
+                        context.globalAlpha = 0.6;
+                        context.drawImage(img, 0, 0, canvas.width, canvas.height);
+                        video.add(context);
+                        context.clearRect(0,0,context.canvas.width,context.canvas.height);
+                        context.globalAlpha = 0.4;
+                        context.drawImage(img, 0, 0, canvas.width, canvas.height);
+                        video.add(context);
+                              
+                        ctx++;
+                        finalizeVideo();
+
+                    };
+                    img.src = dataUri;
+                };
+
+                reader.onerror = function(event) {
+                    console.log(event.target.error.code)
+                    console.error("File could not be read! Code " + event.target.error.code);
+                };
+console.log(file)
+                reader.readAsDataURL(file);
+
+            }      
+
+
+function finalizeVideo(){
+  //check if its ready
+  if(ctx==filesarr.length){
+
+      var start_time = +new Date;
+      var output = video.compile();
+      var end_time = +new Date;
+      var url = webkitURL.createObjectURL(output);
+
+      document.getElementById('awesome').src = url; //toString converts it to a URL via Object URLs, falling back to DataURL
+      console.log(url)
+      document.getElementById('download').style.display = '';
+      document.getElementById('download').href = url;
+      document.getElementById('status').innerHTML = "Compiled Video in " + (end_time - start_time) + "ms, file size: " + Math.ceil(output.size / 1024) + "KB";
+
+  }
+
+}
+
+
+$('.liclass').on({
+    click:function(){
+       var x3=$(this).find('label').text();
+       console.log(x3)
+       
+    }
+})
+
+
+$(document).on('click','.fa-edit',function(){
+    var currentid=$(this).attr('id');
+    selected_image=currentid;
+    const doc = JsonFind(localdata);
+    $('#edit_image_description').show();
+    var fechdata=doc.checkKey(currentid);
+    alert(fechdata)
+
+    if(isEmpty(localdata[currentid])) {
+	
+
+} else {
+$('#write_image_description').text(fechdata)
+}
+
+})
+
+function isEmpty(obj) {
+    for(var key in obj) {
+        if(obj.hasOwnProperty(key))
+            return false;
+    }
+    return true;
+}
+
+
+
+$(document).on('click','.close',function(){
+    
+    $('#edit_image_description').hide();
+$('#open1').hide();
+})
+
+
+$('#write_image_description').keyup(function(){
+    var current_value=$(this).val();
+   // console.log(selected_image+' '+localdata[selected_image])
+
+
+
+localdata[selected_image]=current_value;
+
+audio_detail_array[selected_image]["text"]=current_value;
+
+console.log(audio_detail_array);
+})
+
+
+
+function generate_audio(){
+    var data='';
+    console.log(name_of__fetched_files);
+    for(let i=0;i<name_of__fetched_files.length;i++){
+        if(localdata[name_of__fetched_files[i]]=='undefined'||localdata[name_of__fetched_files[i]]==null){
+            data=data+'';
+        }else{
+            data=data+localdata[name_of__fetched_files[i]];
+        }
+
+    }
+    console.log("value of data="+data);
+    var gtts = require('node-gtts')('en');
+    
+var path = require('path');
+var filepath = path.join('C:/Users/rishi/OneDrive/Desktop/Doremon/audio.mp3');
+ 
+gtts.save(filepath, data, function() {
+  console.log('save done');
+})
+}
+
+$('#Done').click(function(){
+//    generate_audio();
+$('#edit_image_description').hide();
+
+})
+
+
+$('#open-files-in-projectn').click(function(){
+    alert('clicked')
+    $('#open1').css({visibility:'show'})
+
+})
+
+
+
+
+
+async function pdf_to_image(){
+    var file = 'C:/Users/admin/Documents/pypsi-stuff/newoypsi/generator-ak/src/views/try/pdf1.pdf';
+    var pdftoimage = require('pdftoimage');
+    var fs= require('fs')
+   // loaderon();
+var fetchfiles= new Promise((resolve,reject)=>{
+
+
+
+// Returns a Promise
+pdftoimage(file, {
+  format: 'png',  // png, jpeg, tiff or svg, defaults to png
+  prefix: 'img',  // prefix for each image except svg, defaults to input filename
+  outdir: 'C:/Users/admin/Documents/pypsi-stuff/Doremon/images'   // path to output directory, defaults to current directory
+})
+.then(function(){
+  console.log('Conversion done');
+  resolve('done')
+ // loaderoff();
+})
+.catch(function(err){
+
+  //loaderoff()
+  
+  reject(err)
+  alert('Error : '+err)
+  throw err;
+});
+})
+
+await fetchfiles;
+//loaderon()
+
+ var readFiles= new Promise((resolve,reject)=>{
+
+   fs.readdir('C:/Users/admin/Documents/pypsi-stuff/Doremon/images', function (err, files) {
+   // handling error
+     if (err) {
+    //    loaderoff()
+        return console.log('Unable to scan directory: ' + err);
+         reject(err)
+        
+     } 
+     //listing all files using forEach
+     files.forEach(function (file) {
+         // Do whatever you want to do with the file
+         console.log(file); 
+
+         $('#image_selected_list').append(' <li style="padding:6px;" class="liclass"><img src="C:/Users/admin/Documents/pypsi-stuff/Doremon/images/'+file+'" height="60" width="100" />  <label style="overflow:hidden;">'+file+' <i class="fa fa-edit" id="'+file+'"></i></label></li>');
+
+         name_of__fetched_files[i]=file;
+     }).then(function(){
+      //  loaderoff()
+      console.log(name_of__fetched_files)
+         resolve('done')
+        
+     });
+ });
+
+ })
+
+
+
+ await readFiles;
+
+
+
+}
+
+
+
+$("#video1").on("timeupdate", 
+    function(event){
+        vidduration=this.duration;
+       // console.log(vidduration)
+      onTrackedVideoFrame(this.currentTime, this.duration);
+    });
+
+function onTrackedVideoFrame(currentTime, duration){
+    // $("#current").text(currentTime); //Change #current to currentTime
+    // $("#duration").text(duration)
+currentTime1=currentTime.toFixed(1);
+
+    $('#demo').text(getTime(currentTime1));
+    $('#demo2').text(getTime(duration))
+$('#myRange').val((currentTime1/duration)*100)
+   // console.log(currentTime+' '+duration)
+}
+
+
+function getTime(d) {
+    d = Number(d);
+    var h = Math.floor(d / 3600);
+    var m = Math.floor(d % 3600 / 60);
+    var s = Math.floor(d % 3600 % 60);
+
+    var formattedNumber = ("0" + h).slice(-2);
+//console.log(formattedNumber);
+
+    var hDisplay = h;
+    var mDisplay = m ;
+    var sDisplay =  s ;
+    return  ("0" +hDisplay).slice(-2) +':' +("0" +mDisplay).slice(-2)  +':' +("0" +sDisplay).slice(-2); 
+}
+
+$('#video-speed').change(function(){
+    let spped_value=$(this).val();
+    console.log(spped_value)
+
+    var shell = require('shelljs');
+
+ 
+if (!shell.which('git')) {
+    shell.echo('Sorry, this script requires git');
+    shell.exit(1);
+  }
+//shell.rm('C:/Users/admin/Documents/pypsi-stuff/newoypsi/generator-ak/src/views/modules/output.mp4')
+   if (shell.exec('ffmpeg -i C:/Users/admin/Documents/pypsi-stuff/Doremon/try/cannon.mp4 -filter:v "setpts='+spped_value+'*PTS" C:/Users/admin/Documents/pypsi-stuff/Doremon/try/speedup.mp4 -y').code !== 0) {
+     shell.echo('Error: Git commit failed');
+     shell.exit(1);
+   }
+  
+})
+
+
+
+$('#call_python').click(function(){
+    let {PythonShell} = require('python-shell')
+    
+    let options = {
+        mode: 'text',
+  pythonOptions: ['-u'],
+  scriptPath: './',
+  args: [1]
+};
+ 
+PythonShell.run('C:/Users/admin/Documents/pypsi-stuff/newoypsi/generator-ak/pthon_pypsi.py', options, function (err, results) {
+  if (err){
+    console.log(err);
+       throw err;
+  }
+
+  myFunction(results)
+})
+
+
+})
+
+
+
+
+function myFunction(path) {
+    console.log(path)
+    $('#video1').remove();
+                  
+    $('.video-container').append('<video id="video1" width="900" style="margin: 30px;" ><source src="C:/Users/admin/Documents/pypsi-stuff/python-ffmpeg/cannon.mp4" id="vid_src" type="video/mp4"></video>');                         
+       // document.querySelector("#video1 > source").src = path;
+//         $('#video1').removeAttr('src');
+                           
+//     console.log(path[0]) 
+//     var vid = document.getElementById("vid_src");
+//      vid.src = path[0];
+ 
+//     isSupp = vid.canPlayType("video/mp4");
+//   if (isSupp == "") {
+//     vid.src = path[0];
+//   } else {
+//     vid.src = path[0];
+//   }
+//   vid.load();
+$('#video1').load();
+} 
+$('#play').click(function(){
+
+
+// $('#video1').get(0).play()
+
+
+var video = $("#video1").get(0);
+
+if ( video.paused ) {
+    video.play();
+    // $(".play").hide();
+    // $(".pause").show();
+} else {
+    video.pause();
+    // $(".play").show();
+    // $(".pause").hide();
+}
+
+})
+
+     
+
+$('#myRange').change(function(){
+   var current= $(this).val();
+   currentTime1=(current/100)*vidduration;
+   //console.log(current+' ')
+ //  alert(currentTime1+' '+current+' '+document.getElementById("video1").currentTime)
+//console.log((current/100)*vidduration)
+document.getElementById("video1").currentTime=currentTime1
+   // $('#video1').attr('currentTime', currentTime1);
+   $('#demo').text(currentTime1)
+})
+
+$('#myRange').click(function(){
+   var current= $(this).val();
+   currentTime1=(current/100)*vidduration;
+   //console.log(current+' ')
+  // alert(currentTime1+' '+current+' '+document.getElementById("video1").currentTime)
+//console.log((current/100)*vidduration)
+document.getElementById("video1").currentTime=currentTime1
+   // $('#video1').attr('currentTime', currentTime1);
+   $('#demo').text(currentTime1)
+})
+
+
+$('#forward_1').click(function(){
+    var current= $('#myRange').val();
+   currentTime1=(current/100)*vidduration;
+    currentTime1=currentTime1+1.0;
+    document.getElementById("video1").currentTime=currentTime1
+})
+
+
+
+$('#backward_1').click(function(){
+    var current= $('#myRange').val();
+   currentTime1=(current/100)*vidduration;
+    currentTime1=currentTime1-1.0;
+    document.getElementById("video1").currentTime=currentTime1
+})
+let start='',end='';
+
+$('#cutpart').click(function(){
+if(start==''){
+    start=$('#demo').text();
+    $('#startcut').text(start)
+}else{
+    end=$('#demo').text();
+    $('#endcut').text(end)
+}
+  
+})
+$('#cut_clip').click(function(){
+    let s=$('#startcut').text();
+    let e=$('#endcut').text();
+
+
+    let {PythonShell} = require('python-shell')
+    
+    let options = {
+        mode: 'text',
+  pythonOptions: ['-u'],
+  scriptPath: './',
+  args: [s,e,'C:/Users/admin/Documents/pypsi-stuff/Doremon/try/cannon.mp4']
+};
+ 
+PythonShell.run('C:/Users/admin/Documents/pypsi-stuff/newoypsi/generator-ak/cut_clip_py.py', options, function (err, results) {
+  if (err){
+    console.log(err);
+       throw err;
+  }
+
+  myFunction(results)
+})
+})
+
+
+
+$('#split_video').click(function(){
+    
+    let {PythonShell} = require('python-shell')
+    var s=$('#demo').text();
+    
+    let options = {
+        mode: 'text',
+  pythonOptions: ['-u'],
+  scriptPath: './',
+  args: [s,'C:/Users/admin/Documents/pypsi-stuff/Doremon/try/cannon.mp4']
+};
+ 
+PythonShell.run('C:/Users/admin/Documents/pypsi-stuff/newoypsi/generator-ak/split_video.py', options, function (err, results) {
+  if (err){
+    console.log(err);
+       throw err;
+  }
+
+  myFunction(results)
+})
+})
+
+
+var folder = document.getElementById("choose_folder_button");
+folder.onchange=function(){
+    var shell = require('shelljs');
+    var path1 = require('path');
+    var find = require('find');
+ 
+ 
+    let path='';
+    let name_of_pdf='';
+  var files = folder.files;
+    
+      path=files[i].path;
+    //  do_everything_in_one(path)
+//       var parentDir = path1.dirname(path);
+//       console.log(path+' '+ getFileName(path)+' '+parentDir);
+// //   console.log(document.path.substr(0,document.URL.lastIndexOf('/')))
+// if (!shell.which('git')) {
+//     shell.echo('Sorry, this script requires git');
+//     shell.exit(1);
+//   }
+// //shell.rm('C:/Users/admin/Documents/pypsi-stuff/newoypsi/generator-ak/src/views/modules/output.mp4')
+//    if (shell.exec('soffice --headless --convert-to pdf  --outdir C:/Users/admin/Documents/pypsi-stuff/python-ffmpeg/newout "'+path+'"').code !== 0) {
+//      shell.echo('Error: Git commit failed');
+//      shell.exit(1);
+     
+//    }
+}
+
+
+async function do_everything_in_one(path){
+    var shell = require('shelljs');
+    var path1 = require('path');
+    var find = require('find');
+    var pdftoimage = require('pdftoimage');
+    var fs= require('fs')
+    var dir = require('directory')
+    var readDir = require('readdir');
+
+ 
+var tempdata;
+   
+    let name_of_pdf = '';
+    var files = folder.files;
+    path = files[i].path;
+    var parentDir = path1.dirname(path);
+var filename=getFileName(path)
+var file_extention=filename.split('.')[1];
+var only_name=filename.split('.')[0];
+
+    var create_document_to_pdf = new Promise((resolve, reject) => {
+        if (!shell.which('git')) {
+            shell.echo('Sorry, this script requires git');
+            shell.exit(1);
+        }
+        //shell.rm('C:/Users/admin/Documents/pypsi-stuff/newoypsi/generator-ak/src/views/modules/output.mp4')
+        if (shell.exec('soffice --headless --convert-to pdf  --outdir ' + parentDir + ' "' + path + '"').code !== 0) {
+            shell.echo('Error: Git commit failed');
+            shell.exit(1);
+
+        }
+
+       resolve('done')
+    })
+
+    await create_document_to_pdf;
+
+
+    var create_pdf_to_image = new Promise((resolve, reject) => {
+        console.log("pdf page count"+count_pdf_pages(parentDir+'/'+only_name+'.pdf'))
+    pdftoimage(parentDir+'/'+only_name+'.pdf', {
+  format: 'png',  // png, jpeg, tiff or svg, defaults to png
+  prefix: 'img',  // prefix for each image except svg, defaults to input filename
+  outdir: parentDir+'/Output'   // path to output directory, defaults to current directory
+})
+.then(function(){
+  console.log('Conversion done');
+  resolve('done')
+ // loaderoff();
+})
+.catch(function(err){
+
+  //loaderoff()
+  
+  reject(err)
+  alert('Error : '+err)
+  throw err;
+});
+    });
+
+await create_document_to_pdf;
+
+var read_imagesdirectory = new Promise((resolve, reject) => {
+
+// readDir.read( parentDir+'/Output', readDir.ABSOLUTE_PATHS + readDir.CASELESS_SORT, function (err, allFiles) {
+//     if(err){
+//         console.log(err)
+//         reject(err)
+//         throw err;
+//     }
+// for(let i=0;i<allFiles.length;i++){
+// // console.log(allFiles[i].replace("/", "\\"))
+// // filesarr.push(allFiles[i].replace("/", "\\"))
+// tempdata={name: "img-2.png",path: allFiles[i].replace("/", "\\"),size: 2189051,type: "image/png",webkitRelativePath: ""}
+// filesarr.push(tempdata)
+// }
+// resolve('done2')
+// });
+document.getElementById('filesinput').click();
+setTimeout(4000)
+resolve('done')
+})
+
+await read_imagesdirectory
+
+
+
+
+
+}
+
+$('#choose_folder').click(function(){
+
+   $('#choose_folder_button').trigger('click')
+})
+function getFileName(path) {
+    return path.match(/[-_\w]+[.][\w]+$/i)[0];
+}
+
+
+$(document).on('click','#choose_this_audio',function(){
+  selected_image  =$(this).attr('name')
+   // alert('selected'+$(this).attr('name'))
+$('#choose_audio').trigger('click');
+})
+
+
+$(document).on('change','#choose_audio',function(e){
+    //alert('called here')
+  
+    var fileName = e.target.files[0].path;
+   // console.log(selected_image)
+    // audio_detail_array[current_id].audio=fileName;
+    audio_detail_array[selected_image]["audio"]=fileName;
+            // alert('The file "' + fileName +  '" has been selected.');
+
+            console.log(audio_detail_array)
+});
+
+
+$('#render_audio_video').click(function(){
+    callthis();
+   
+})
+
+
+async function callthis(){
+    console.log('callthis')
+    var shell = require('shelljs');
+    var fs= require('fs')
+    let {PythonShell} = require('python-shell')
+    const { waitFile } = require('wait-file');
+    var waitforfile=[];
+  //  console.log( Object.keys(audio_detail_array).length)
+    // for(let i=0;i<Object.keys(audio_detail_array).length;i++){
+
+    // }
+    // $.each(audio_detail_array, function(index, obj){
+    //    console.log("index"+index)
+    // });
+  var audio_vid=new Promise((resolve,reject)=>{
+    
+    console.log('call this')
+    for(let i=0;i<filesarr.length;i++){
+        console.log('callme'+i)
+        console.log(audio_detail_array[filesarr[i].name].path)
+
+if(audio_detail_array[filesarr[i].name].audio!='NA'){
+// if (!shell.which('git')) {
+//     shell.echo('Sorry, this script requires git');
+//     shell.exit(1);
+//   }
+ 
+// //shell.rm('C:/Users/admin/Documents/pypsi-stuff/newoypsi/generator-ak/src/views/modules/output.mp4')
+//    if (shell.exec('ffmpeg -loop 1 -i '+audio_detail_array[filesarr[i].name].path+' -i '+audio_detail_array[filesarr[i].name].audio+' -c:v libx264 -c:a aac -strict experimental -b:a 192k -shortest C:/Users/admin/Documents/pypsi-stuff/Doremon/outfromprogramme/output'+i+'.mp4').code !== 0) {
+//      shell.echo('Error: Git commit failed');
+//      shell.exit(1);
+//    }
+  
+   let options = {
+        mode: 'text',
+  pythonOptions: ['-u'],
+  scriptPath: './',
+  args: [audio_detail_array[filesarr[i].name].path,audio_detail_array[filesarr[i].name].audio,"C:\\Users\\admin\\Documents\\pypsi-stuff\\Doremon\\outfromprogramme\\output"+i+".mp4"]
+};
+ 
+PythonShell.run('C:/Users/admin/Documents/pypsi-stuff/newoypsi/generator-ak/p5.py', options, function (err, results) {
+  if (err){
+    console.log(err);
+       throw err;
+  }
+
+ // myFunction(results)
+ console.log(result)
+})
+
+   
+
+}else if(audio_detail_array[filesarr[i].name].text!='NA'){
+
+}
+
+fs.appendFile('C:/Users/admin/Documents/pypsi-stuff/Doremon/outfromprogramme/filedata.txt', "file 'C:/Users/admin/Documents/pypsi-stuff/Doremon/outfromprogramme/output"+i+".mp4'\r\n",function(err,data){
+    if(err){
+        console.log(err);
+        if(i==(filesarr.length-1)){
+        resolve(err)
+    }
+    }
+    if(i==(filesarr.length-1)){
+        resolve('done')
+    }
+    console.log(data)
+});
+
+    
+
+    }
+  });
+
+  await audio_vid;
+
+ 
+    for(let j=0;j<filesarr.length;j++){
+waitforfile.push("C:/Users/admin/Documents/pypsi-stuff/Doremon/outfromprogramme/output"+j+".mp4")
+
+console.log(j+'==('+(filesarr.length-1)+')')
+
+}
+
+
+
+
+// var create_final=new Promise((resolve,reject)=>{
+
+
+const opts = {
+  resources:waitforfile,
+  delay: 0, // initial delay in ms, default 0ms
+  interval: 100, // poll interval in ms, default 250ms
+  log: false, // outputs to stdout, remaining resources waited on and when complete or errored, default false
+  reverse: false, // resources being NOT available, default false
+  timeout: 30000, // timeout in ms, default Infinity
+  verbose: false, // optional flag which outputs debug output, default false
+  window: 1000, // stabilization time in ms, default 750ms
+};
+ 
+waitFile(opts, function(err) {
+  if (err) {
+    return console.error(err);
+  }
+  // once here, all resources are available
+});
+ 
+// Usage with promises
+waitFile(opts)
+  .then(function() {
+    // once here, all resources are available
+    console.log('file found')
+
+
+
+
+
+    let options = {
+        mode: 'text',
+  pythonOptions: ['-u'],
+  scriptPath: './',
+  args: []
+};
+ 
+PythonShell.run('C:/Users/admin/Documents/pypsi-stuff/newoypsi/generator-ak/src/views/python-pypsi/generate_final_video.py', options, function (err, results) {
+  if (err){
+    console.log(err);
+       throw err;
+    //    reject()
+  }
+
+ // myFunction(results)
+ console.log(result)
+//  resolve('done2')
+})
+
+
+
+
+
+
+  })
+  .catch(function(err) {
+    console.log('time out '+err)
+    console.error(err);
+  });
+
+    
+
+// });
+
+
+// await create_final;
+//  });
+
+
+  
+//  await audio_vid;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    console.log('Done all')
+}
+
+
+
+async function all_alone(){
+    var shell = require('shelljs');
+    var fs= require('fs')
+    var promise=require('promise')
+    
+   let {PythonShell} = require('python-shell')
+  //  console.log( Object.keys(audio_detail_array).length)
+    // for(let i=0;i<Object.keys(audio_detail_array).length;i++){
+
+    // }
+    // $.each(audio_detail_array, function(index, obj){
+    //    console.log("index"+index)
+    // });
+    var createImages=new Promise((resolve,reject)=>{
+
+    for(let i=0;i<filesarr.length;i++){
+        console.log(audio_detail_array[filesarr[i].name].path)
+
+if(audio_detail_array[filesarr[i].name].audio!='NA'){
+
+
+ 
+if (!shell.which('git')) {
+    shell.echo('Sorry, this script requires git');
+    shell.exit(1);
+  }
+ 
+//shell.rm('C:/Users/admin/Documents/pypsi-stuff/newoypsi/generator-ak/src/views/modules/output.mp4')
+   if (shell.exec('ffmpeg -loop 1 -i '+audio_detail_array[filesarr[i].name].path+' -i '+audio_detail_array[filesarr[i].name].audio+' -c:v libx264 -c:a aac -strict experimental -b:a 192k -shortest C:/Users/admin/Documents/pypsi-stuff/Doremon/outfromprogramme/output'+i+'.mp4').code !== 0) {
+     shell.echo('Error: Git commit failed');
+     shell.exit(1);
+   }
+  
+
+
+    
+    let options = {
+        mode: 'text',
+  pythonOptions: ['-u'],
+  scriptPath: './',
+  args: [audio_detail_array[filesarr[i].name].path,audio_detail_array[filesarr[i].name].audio,"C:\\Users\\admin\\Documents\\pypsi-stuff\\Doremon\\outfromprogramme\\output"+i+".mp4"]
+};
+ 
+PythonShell.run('C:/Users/admin/Documents/pypsi-stuff/newoypsi/generator-ak/p5.py', options, function (err, results) {
+  if (err){
+    console.log(err);
+       throw err;
+  }
+
+ // myFunction(results)
+ console.log(result)
+})
+
+
+
+}else if(audio_detail_array[filesarr[i].name].text!='NA'){
+
+}
+
+alert('baove  ')
+fs.appendFile('C:/Users/admin/Documents/pypsi-stuff/Doremon/outfromprogramme/filedata.txt', "file 'C:/Users/admin/Documents/pypsi-stuff/Doremon/outfromprogramme/output"+i+".mp4'\r\n",function(err,data){
+    if(err){
+        console.log(err);
+        reject(err)
+    }
+    console.log(data)
+
+    if(i==(filesarr.length-1)){
+    resolve(data)
+    }
+});
+
+    }
+});
+
+await createImages;
+
+
+var  wait_until_file_create=new Promise((resolve,reject)=>{
+
+ 
+
+
+})
+  
+
+
+    
+}
+
+
+
+
+
+
+$('#final_render').click(function(){
+
+    var shell = require('shelljs');
+ 
+
+if (!shell.which('git')) {
+    shell.echo('Sorry, this script requires git');
+    shell.exit(1);
+  }
+ 
+//shell.rm('C:/Users/admin/Documents/pypsi-stuff/newoypsi/generator-ak/src/views/modules/output.mp4')
+   if (shell.exec('ffmpeg -f concat -safe 0 -i "C:\\Users\\admin\\Documents\\pypsi-stuff\\Doremon\\outfromprogramme\\filedata.txt" -codec copy "C:\\Users\\admin\\Documents\\pypsi-stuff\\Doremon\\outfromprogramme\\final\\finaloutput.mp4"').code !== 0) {
+     shell.echo('Error: Git commit failed');
+     shell.exit(1);
+
+
+     
+   }
+  
+
+});
+
+// console.log(count_pdf_pages('C:/Users/admin/Documents/pypsi-stuff/newoypsi/generator-ak/src/views/try/doc-to-pdf/output.pdf'))
+
+async function count_pdf_pages(filepath){
+
+    let pdfpages='';
+    var pdfPageCount=require('@thorsenio/pdf-page-count')
+
+return new Promise((resolve,reject)=>{
+    pdfPageCount.count(filepath, function(resp){
+   
+
+  // console.log("Oh no..tool says the PDF has " + resp.data + " pages, but it should say it has one page!");
+   pdfpages=resp.data;
+resolve(resp.data)
+});
+})
+
+// await fetchdata;
+
+
+// console.log(pdfpages)
+
+
+}
+
+</script>
+</body>
+
+</html>

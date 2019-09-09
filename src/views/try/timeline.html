@@ -1,0 +1,168 @@
+<html>
+    <head>
+      
+<style>
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+body {
+  font: normal 16px/1.5 "Helvetica Neue", sans-serif;
+  background: #456990;
+  color: #fff;
+}
+
+
+/* .section SECTION
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.section {
+  background: #F45B69;
+  padding: 50px 0;
+}
+
+.section .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section h1 {
+  font-size: 2.5rem;
+}
+
+.section h2 {
+  font-size: 1.3rem;
+}
+
+
+/* TIMELINE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline {
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+.timeline ol {
+  font-size: 0;
+  width: 100vw;
+  padding: 250px 0;
+  transition: all 1s;
+}
+
+.timeline ol li {
+  position: relative;
+  display: inline-block;
+  list-style-type: none;
+  width: 160px;
+  height: 3px;
+  background: #fff;
+}
+
+.timeline ol li:last-child {
+  width: 280px;
+}
+
+.timeline ol li:not(:first-child) {
+  margin-left: 14px;
+}
+
+.timeline ol li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 1px);
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #F45B69;
+}
+</style>
+
+    </head>
+    <body>
+            <section class="section intro">
+                    <div class="container">
+                      <h1>Horizontal Timeline &rarr;</h1>
+                    </div>
+                  </section>
+                  
+                  <section class="timeline">
+                    <ol>
+                      <li>
+                        <div>
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                        </div>
+                      </li>
+                      <li></li>
+                    </ol>
+                  
+                    <div class="arrows">
+                      <button class="arrow arrow__prev disabled" disabled>
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_prev.svg" alt="prev timeline arrow">
+                      </button>
+                      <button class="arrow arrow__next">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_next.svg" alt="next timeline arrow">
+                      </button>
+                    </div>
+                  </section>
+    </body>
+</html>

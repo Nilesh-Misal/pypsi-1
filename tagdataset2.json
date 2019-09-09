@@ -1,0 +1,13 @@
+{
+    "h1": {
+        "text-size": "range",
+        "color": "color",
+        "font-family": "select",
+        "editText":"text"
+    },
+    "p": {
+        "text-size": "range",
+        "color": "color",
+        "font-family": "select"
+    }
+}
